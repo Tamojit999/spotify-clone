@@ -1,0 +1,8 @@
+import { Router } from "express";
+const route=Router();
+route.get("/",(req,res)=>
+{
+    res.send("Auth route works");   
+});
+
+export default route;
