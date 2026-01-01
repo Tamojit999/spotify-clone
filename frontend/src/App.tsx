@@ -1,26 +1,26 @@
-import { Route,Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/Home/HomePage";
 import AuthCallbackPage from "./pages/Auth-Callback/AuthCallbackPage";
-import { Button } from "./components/ui/button";  
-
+import { AuthenticateWithRedirectCallback } from "@clerk/clerk-react";
 
 
 function App() {
-  return (
-    <>
-
-    <Routes> 
-      <Route path="/" element={<HomePage/>}/>  
-       <Route path="/auth-callback" element={<AuthCallbackPage/>}/>
-
-    </Routes>
-  
-   
-
-
-    </>
-    
-  );
+	return (
+		<>
+			<Routes>
+				<Route
+					path='/sso-callback'
+					element={<AuthenticateWithRedirectCallback signUpForceRedirectUrl={"/auth-callback"} />}
+				/>
+				<Route path='/auth-callback' element={<AuthCallbackPage />} />
+				
+			
+					<Route path='/' element={<HomePage />} />
+				
+			</Routes>
+		
+		</>
+	);
 }
 
-export default App
+export default App;

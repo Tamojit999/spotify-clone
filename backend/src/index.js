@@ -4,6 +4,14 @@
 import express from 'express' // import express module for server creation
 const app = express() // create an instance of express application
 
+
+import cors from "cors" 
+
+app.use(cors({
+  origin:'http://localhost:3000',
+  credentials:true
+}))
+
 /// import path module for handling file paths
 
 import path from 'path' 

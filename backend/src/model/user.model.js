@@ -10,7 +10,7 @@ const userSchema=new mongoose.Schema({
     },
     imageUrl:{
         type:String,
-        unique:true,
+       
     },
     clerkId:{  // we are using clerk for authentication so we will store clerk id here so that we can identify user
         type:String,

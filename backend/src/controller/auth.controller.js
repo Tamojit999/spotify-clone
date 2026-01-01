@@ -18,8 +18,14 @@ export const authCallback=async(req,res,next)=>
                 fullName:`${firstName} ${lastName}`,
                 imageUrl:imageUrl
             });
-           
+
         }
+
+    return res.status(200).json({
+      success: true,
+      user
+    });
+
 
     }
     catch(err)

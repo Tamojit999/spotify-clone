@@ -1,9 +1,19 @@
 import React from 'react'
-import { useSignIn } from '@clerk/clerk-react'
+import { useSignIn } from '@clerk/clerk-react' /*Used to sign a user in
+
+This hook is for authentication actions, such as:
+
+email/password sign-in
+
+OTP
+
+social login (Google, etc.)
+
+redirect flows*/ 
 import { Button } from './button';
 const SignInOAuthButton = () => {
  
-    const {isLoaded, signIn} = useSignIn();
+    const {isLoaded, signIn} = useSignIn(); //isLoaded is boolean value that tell that clerk is ready for sign in or not 
     if(!isLoaded) {
         return null;
     }
@@ -17,7 +27,7 @@ const SignInOAuthButton = () => {
         });
     }
 
-    return <Button onClick={signInWithGoogle} variant={'secondary'} className='w-full text-white border-zinc-200 h-1'>Continue With Google</Button>
+    return <Button onClick={signInWithGoogle} variant={'ghost'} className='w-full text-white  bg-zinc-800 h-11+  '>Continue With Google</Button>
   
 }
 

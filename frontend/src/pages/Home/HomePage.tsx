@@ -1,8 +1,9 @@
+
 import TopBar from "../../components/ui/TopBar";
 
 const HomePage = () => {
   return (
-    <div><TopBar/></div>
+    <div><TopBar/> </div>
   )
 }
 
