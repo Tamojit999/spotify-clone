@@ -5,11 +5,13 @@ import { AuthenticateWithRedirectCallback } from "@clerk/clerk-react";
 import MainLayout from "./layout/MainLayout";
 import ChatPage from "./pages/ChatPage/ChatPage";
 import AlbumPage from "./pages/Album/AlbumPage";
+import AudioPlayer from  "./layout/components/AudioPlayer";
 
 
 function App() {
 	return (
 		<>
+		 <AudioPlayer />
 			<Routes>
 				<Route
 					path='/sso-callback'
