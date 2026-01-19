@@ -3,7 +3,6 @@ import { Link, Outlet } from 'react-router-dom'
 import Split from "react-split";
 import LeftSidebar from './components/LeftSidebar';
 import RightSidebar from './components/RightSidebar';
-import AudioPlayer from './components/AudioPlayer';
 import PlaybackControls from './components/PlaybackControls';
 const MainLayout = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -43,19 +42,20 @@ const MainLayout = () => {
             <RightSidebar />
           </div>
         </Split>) : (
-        // MOBILE — show only main content
-        <div className="h-full overflow-auto">
+          <Split direction="horizontal" className="flex-1 flex h-full overflow-hidden py-1" gutterSize={8}  sizes={[20, 80]} minSize={[10, 40]}>
+              <div  className="h-full overflow-auto">
+            <LeftSidebar />
+          </div>
+          <div className="h-full overflow-auto">
               <Outlet />
             </div>
-            
-            
-            
-            
+          </Split>
+           
 
       )
-      
+       
       }
-      <PlaybackControls />
+     <PlaybackControls />
 
       
 

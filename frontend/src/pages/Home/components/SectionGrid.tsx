@@ -16,14 +16,14 @@ const SectionGrid = ({title,songs,isLoading}:SectionGrid) => {
             <h2 className='text-xl sm:text-2xl font-bold'>{title}</h2>
             <Button variant='link' className='text-sm text-zinc-400 hover:text-white'>Show all</Button>
         </div>
-        <div  className='grid grid-col-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
+        <div  className='grid grid-col-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 flex-wrap '>
              {songs.map((song)=>(
                 <div key={song._id} className='bg-zinc-800/40 p-4 rounded-md hover:bg-zinc-700/40 transition-all group cursor-pointer'>
                     <div className='relative mb-4'>
-                        <div className='aspect-spuare rounded-md shadow-lg overflow-hidden'>
+                        <div className='aspect-spuare rounded-md shadow-lg overflow-hidden '>
                             <img src={song.imageUrl} alt={song.title}
-                            className='w-full h-full object-cover transition-transform duration-300 
-									group-hover:scale-105' />
+                            className=' object-cover transition-transform duration-300 h-full w-full
+							group-hover:scale-105 ' />
 
                         </div>
                         <PlayButton song={song}/>

@@ -60,7 +60,7 @@ const LeftSidebar = () => {
 
         </SignedIn>
       </div>
-      <div className=' h-full rounded-lg bg-zinc-900 p-4'>
+      <div className=' h-full rounded-lg bg-zinc-900 p-4 overflow-hidden'>
         <div className='flex items-center justify-between mb-4'>
           <div className='flex items-center text-white px-2'>
             <Library className='size-5 mr-2' />

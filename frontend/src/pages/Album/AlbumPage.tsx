@@ -49,7 +49,7 @@ const AlbumPage = () => {
     return (
 
 
-        <div className='h-full  rounded-md overflow-hidden ' >
+        <div className='h-full  rounded-md overflow-auto ' >
             <ScrollArea className='h-full'>
                 {/*Main Content*/}
                 <div className='relative min-h-full'>
@@ -67,7 +67,7 @@ const AlbumPage = () => {
                                 alt={curralbum?.title}
                                 className='w-[240px] h-[240px] shadow-xl rounded'
                             />
-                            <div className='flex flex-col justify-end'>
+                            <div className='hidden sm:flex flex-col justify-end'>
                                 <p className='text-sm font-medium'>
                                     Album
                                 </p>
@@ -108,11 +108,11 @@ const AlbumPage = () => {
                                 className='grid grid-cols-[16px_4fr_2fr_1fr] gap-4 px-10 py-2 text-sm 
             text-zinc-400 border-b border-white/5'
                             >
-                                <div>#</div>
+                                <div >#</div>
                                 <div>Title</div>
-                                <div>Released Date</div>
+                                <div className='hidden sm:flex'>Released Date</div>
                                 <div>
-                                    <Clock className='h-4 w-4' />
+                                    <Clock className='hidden sm:flex h-4 w-4' />
                                 </div>
                             </div>
                             {/*songs*/}
@@ -145,17 +145,17 @@ const AlbumPage = () => {
 
                                                         <div>
                                                             <div className={`font-medium text-white`}>{song.title}</div>
-                                                            <div>{song.artist}</div>
+                                                            <div className='hidden sm:flex'>{song.artist}</div>
                                                         </div>
 
                                                     </div>
-                                                    <div className='flex
+                                                    <div className='hidden sm:flex
                                                 items-center'>{
                                                             song.createdAt.split("T")[0]
 
                                                         }
                                                     </div>
-                                                    <div className='flex
+                                                    <div className='hidden sm:flex
                                                 items-center'>{
                                                             formatDuration(song.duration)
 
