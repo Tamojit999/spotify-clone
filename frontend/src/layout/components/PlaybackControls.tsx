@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 
 import { Slider } from "@/components/ui/slider"
 import { Button } from '@/components/ui/button';
-import { Laptop2, ListMusic, Mic2, Pause, Play, Repeat, Shuffle, SkipBack, SkipForward, Volume1 } from 'lucide-react';
+import { Pause, Play, SkipBack, SkipForward, Volume1 } from 'lucide-react';
 import { formatDuration } from '@/pages/Album/AlbumPage';
 const PlaybackControls = () => {
     const { currentSong, isPlaying, togglePlay, playNext, playPrevious } = usePlayerStore();
