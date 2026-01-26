@@ -54,17 +54,6 @@ app.use(fileUpload( // configure file upload middleware
   }
 )); 
 
-
-//// sever listening
-
-app.listen(PORT, () => {
-  console.log('Server is running on port ' + PORT)
-
-
-    connectDB() // connect to the database when server starts
-})
-
-
 //// user routes setup
 
 import userRoutes from './routes/user.route.js' // import user routes from user.routes.js
@@ -81,6 +70,46 @@ app.use('/api/songs', songRoutes) // use user routes for '/songs' endpoint
 app.use('/api/albums', albumRoutes) // use user routes for '/albums' endpoint
 app.use('/api/stats', statRoutes) // use user routes for '/stats' endpoint
 
+//handling the tmp folder
+import cron from 'node-cron';
+import fs from 'fs';
+const tempDir = path.join(process.cwd(), "tmp");
+cron.schedule("0 * * * *", () => {
+	if (fs.existsSync(tempDir)) {
+		fs.readdir(tempDir, (err, files) => {
+			if (err) {
+				console.log("error", err);
+				return;
+			}
+			for (const file of files) {
+				fs.unlink(path.join(tempDir, file), (err) => {});
+			}
+		});
+	}
+});
+
+
+
+// serve static files
+if (process.env.NODE_ENV === "production") {
+	app.use(express.static(path.join(__dirname, "../frontend/dist")));
+	app.get(/.*/, (req, res) => {
+		res.sendFile(path.resolve(__dirname, "../frontend", "dist", "index.html"));
+	});
+}
+
+
+
+
+
+//// sever listening
+
+app.listen(PORT, () => {
+  console.log('Server is running on port ' + PORT)
+
+
+    connectDB() // connect to the database when server starts
+})
 
 
 

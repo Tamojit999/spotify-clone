@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { useSignIn } from '@clerk/clerk-react' /*Used to sign a user in
 
 This hook is for authentication actions, such as:
