@@ -11,8 +11,10 @@ social login (Google, etc.)
 
 redirect flows*/ 
 import { Button } from './button';
+
+
 const SignInOAuthButton = () => {
- 
+       
     const {isLoaded, signIn} = useSignIn(); //isLoaded is boolean value that tell that clerk is ready for sign in or not 
     if(!isLoaded) {
         return null;
@@ -22,12 +24,14 @@ const SignInOAuthButton = () => {
         signIn.authenticateWithRedirect({ /* This tells Clerk:
 “Start OAuth login and redirect the user to Google”*/
             strategy: 'oauth_google', //specifies Google as the OAuth provider.
-            redirectUrl:"/soo-callback", // URL to redirect after sign-in
+            redirectUrl:"/sso-callback", // URL to redirect after sign-in
             redirectUrlComplete: "/auth-callback"// URL after sign-in completion
         });
+        
+        
     }
 
-    return <Button onClick={signInWithGoogle} variant={'ghost'} className='w-full text-white  bg-zinc-800 h-11+  '>Continue With Google</Button>
+    return <Button onClick={signInWithGoogle} variant={'ghost'} className='w-full text-white  bg-zinc-800 h-11+  '>Admin login</Button>
   
 }
 
