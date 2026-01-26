@@ -1,4 +1,4 @@
-
+import { FcGoogle } from 'react-icons/fc';
 import { useSignIn } from '@clerk/clerk-react' /*Used to sign a user in
 
 This hook is for authentication actions, such as:
@@ -31,7 +31,19 @@ const SignInOAuthButton = () => {
         
     }
 
-    return <Button onClick={signInWithGoogle} variant={'ghost'} className='w-full text-white  bg-zinc-800 h-11+  '>Admin login</Button>
+    return <Button
+  onClick={signInWithGoogle}
+  variant="ghost"
+  className="w-full h-11 bg-zinc-800 text-white flex items-center justify-center gap-2"
+>
+  <FcGoogle className="text-xl" />
+
+  {/* Text hidden on mobile, visible on sm+ */}
+  <span className="hidden sm:inline">
+    Continue with Google
+  </span>
+</Button>
+
   
 }
 

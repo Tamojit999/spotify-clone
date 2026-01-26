@@ -66,14 +66,7 @@ const PlaybackControls = () => {
             <div className='flex flex-col items-center gap-2 flex-1 max-w-full sm:max-w-[45%]'>
                 <div className='flex items-center gap-4 sm:gap-6'>
 
-                    <Button
-                        size='icon'
-
-                        className='hidden sm:inline-flex hover:text-white text-zinc-400'
-                    >
-                        <Shuffle className='h-4 w-4' />
-                    </Button>
-
+                    
                     <Button
                         size='icon'
 
@@ -101,13 +94,7 @@ const PlaybackControls = () => {
                     >
                         <SkipForward className='h-4 w-4' />
                     </Button>
-                    <Button
-                        size='icon'
-
-                        className='hidden sm:inline-flex hover:text-white text-zinc-400'
-                    >
-                        <Repeat className='h-4 w-4' />
-                    </Button>
+                   
 
 
 
@@ -137,15 +124,7 @@ const PlaybackControls = () => {
             </div>
             <div className='hidden sm:flex items-center gap-4 min-w-45 w-[30%] justify-end '>
 
-                <Button size='icon' className='hover:text-white text-zinc-400'>
-                    <Mic2 className='h-4 w-4' />
-                </Button>
-                <Button size='icon' className='hover:text-white text-zinc-400'>
-                    <ListMusic className='h-4 w-4' />
-                </Button>
-                <Button size='icon' className='hover:text-white text-zinc-400'>
-                    <Laptop2 className='h-4 w-4' />
-                </Button>
+               
 
                 <div className='flex items-center gap-2'>
                     <Button size='icon' className='hover:text-white text-zinc-400'>
